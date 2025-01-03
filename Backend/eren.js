@@ -2,7 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import { connectDB } from './config/db.js';
 import { runGemini } from './geminiApi.js';
-import cors from 'cors'; // Import the cors middleware
+import cors from 'cors';
 
 dotenv.config();
 import titansRoutes from "./routes/titans.route.js";
@@ -10,9 +10,9 @@ import titansRoutes from "./routes/titans.route.js";
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors()); // Enable CORS for all origins
+app.use(cors());
 app.use(express.json());
-app.use("/api/aot", titansRoutes);
+app.use("/api/aot", titansRoutes); // uses titan.route.js
 
 app.get('/', (req, res) => {
   res.send("Backend Server Running");

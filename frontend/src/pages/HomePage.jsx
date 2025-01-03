@@ -22,27 +22,27 @@ const HomePage = () => {
       <Box position="relative" height="100vh" overflow="hidden">
         {/* Background Box with Transparency */}
         <Box
-          position="absolute"
-          top={0}
-          left={0}
-          width="100%"
-          height="100%"
-          bgImage="url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhe_ceUp_2foCvEZ61902xYRn3wN0YZiUKtA&s')"
-          bgSize="cover"
-          bgPosition="center"
-          bgRepeat="no-repeat"
-          _before={{
-            content: '""',
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: "rgba(0, 0, 0, 0.5)", // 50% transparent black overlay
-          }}
-          transform={isSliding ? "translateY(-100%)" : "translateY(0)"}
-          transition="transform 0.8s ease-in-out"
-        />
+     position="absolute"
+     top={0}
+     left={0}
+     width="100%"
+     height="100%"
+     bgImage="url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhe_ceUp_2foCvEZ61902xYRn3wN0YZiUKtA&s')"
+     bgSize="100% auto" // Changed from "cover"
+     bgPosition="center"
+     bgRepeat="no-repeat"
+     _before={{
+       content: '""',
+       position: "absolute",
+       top: 0,
+       left: 0,
+       right: 0,
+       bottom: 0,
+       backgroundColor: "rgba(0, 0, 0, 0.8)",
+     }}
+     transform={isSliding ? "translateY(-100%)" : "translateY(0)"}
+     transition="transform 0.8s ease-in-out"
+   />
         
         {/* Content Box with Opaque Text */}
         <Box
